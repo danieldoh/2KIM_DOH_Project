@@ -2,7 +2,7 @@ const axios = require('axios')
 const fs = require('fs')
 //import { Octokit } from "octokit";
 
-async function getScoreCard(url) {
+async function getScoreCard(url:string) {
     var api_url = new String("https://api.securityscorecards.dev/projects/");
     var repo_url = new String(url);
     var repo_url_len = repo_url.length
@@ -17,13 +17,13 @@ async function getScoreCard(url) {
     var jsonfile_name = './Scorecard.json'
     await axios
         .request(options)
-        .then(function (response) {
+        .then(function (response:any) {
             const jsonString = JSON.stringify(response.data, null, 2)
             fs.writeFileSync(jsonfile_name, jsonString, {
                 flag: 'w'
             })
         })
-        .catch(function (error) {
+        .catch(function (error:any) {
             console.error(error);
         });
     return jsonfile_name

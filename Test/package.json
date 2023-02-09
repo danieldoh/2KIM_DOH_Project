@@ -1,16 +1,17 @@
 {
-  "name": "src",
-  "version": "1.0.0",
+  "name": "test",
   "main": "api.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "npm i axios node-fetch --save && npm i typescript @types/node @types/node-fetch@2.x --save-dev",
+    "build": "npx tsc",
+    "clear": "rm -rf ./node_modules ./package-lock.json"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^1.3.2",
-    "commander": "^10.0.0",
     "node-fetch": "^3.3.0"
   },
   "devDependencies": {
@@ -18,5 +19,6 @@
     "@types/node-fetch": "^2.6.2",
     "typescript": "^4.9.5"
   },
+  "version": "1.0.0",
   "description": ""
 }

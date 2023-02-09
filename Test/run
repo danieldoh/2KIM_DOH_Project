@@ -2,7 +2,7 @@
 import os
 import sys
 import subprocess
-import javascript
+#import javascript
 import json
 
 def getCorrectness(json_file, testScore):
@@ -35,17 +35,21 @@ if __name__ == "__main__":
     action = sys.argv[1]
     if (action == 'install'):
         subprocess.run(["npm init -y"], shell = True)
-        subprocess.run(["npm install -g typeScript"], shell = True)
-        subprocess.run(["npm install commander"], shell = True)
-        subprocess.run(["npm install node-fetch"], shell = True)
-        subprocess.run(["npm install --save-dev @types/node-fetch@2.x"], shell = True)
-        subprocess.run(["npm install axios"], shell = True)
-        subprocess.run(["npm i --save-dev @types/node"], shell = True)
+        #subprocess.run(["npm install -g typescript"], shell = True)
+        #subprocess.run(["npm install commander"], shell = True)
+        #subprocess.run(["npm install node-fetch"], shell = True)
+        #subprocess.run(["npm install --save-dev @types/node-fetch@2.x"], shell = True)
+        #subprocess.run(["npm install axios"], shell = True)
+        #subprocess.run(["npm i --save-dev @types/node"], shell = True)
+        subprocess.run(["npm run install"], shell = True)
 
         subprocess.run(["pip install javascript"], shell = True)
 
     elif(action == 'build'):
         subprocess.run(["npm run build"], shell = True)
+    
+    elif(action == 'clear'):
+        subprocess.run(["npm run clear"], shell = True)
 
     elif(action == 'test'):
         print('testing')
